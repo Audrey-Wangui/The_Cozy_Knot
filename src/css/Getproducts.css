@@ -1,0 +1,110 @@
+/* From Uiverse.io by andrew-demchenk0 - Modified for Real Images */
+.card {
+  --font-color: #323232;
+  --font-color-sub: #323232;
+  --bg-color: #ffff;
+  --main-color: ;
+  --main-focus: #d9828d;
+  width: 230px;
+  min-height: 300px;
+  height: auto;
+  background: var(--bg-color);
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 10px;
+  font-family: system-ui, -apple-system, sans-serif;
+  margin-top: 80px;  /* ← Add this - increases space from top */
+  margin-bottom: 80px;
+}
+
+/* Image Container */
+.card-img {
+  width: 100%;
+  height: 120px; /* Provides consistent vertical space */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.5s;
+  flex-shrink: 0;
+}
+
+/* Your Actual Image Styling */
+.card-img img {
+  width: 100px;         /* Same width as original green sweater */
+  height: 100px;        /* Same height as original green sweater */
+  object-fit: contain;  /* Keeps image from stretching */
+  border-radius: 4px;
+}
+
+.card-img:hover {
+  transform: translateY(-3px);
+}
+
+.card-title {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+  color: var(--font-color);
+}
+
+.card-subtitle {
+  font-size: 14px;
+  color: var(--font-color-sub);
+  text-align: center;
+}
+
+.card-divider {
+  width: 100%;
+  border: 0.5px solid var(--main-color);
+  margin: 5px 0;
+  color: #d9828d;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  color: #667436;
+}
+
+.card-price {
+  font-size: 20px;
+  font-weight: 500;
+  color: #621e3e;
+}
+
+.card-btn {
+  height: 35px;
+  width: 35px;
+  background: var(--bg-color);
+  border: 2px solid var(--main-color);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.card-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: var(--main-color);
+}
+
+.card-btn:hover {
+  border-color: var(--main-focus);
+}
+
+.card-btn:hover svg {
+  fill: var(--main-focus);
+}
+
+.card-btn:active {
+  transform: translateY(2px);
+}
