@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Loader from './Loader';
 import axios from 'axios';
 import Form from '../css/Form.css'
+import Footer from './Footer';
 
 const Addproducts = () => {
 
@@ -121,11 +122,11 @@ const Addproducts = () => {
           accept='image/*'
           onChange={(e) => setProductPhoto(e.target.files[0])}/> </div><br />
 
-          <button className="btn">SIGN UP</button>
+          <button className="btn">ADD PRODUCT</button>
             <br /><br />
         </form> 
       </div>
-        
+    <Footer />    
     </div>
   )
 }

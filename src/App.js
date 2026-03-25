@@ -20,11 +20,12 @@ function App() {
         <Link to="/"><div className="nav-logo">The Cozy Knot</div></Link>
       </div>
 
-      <div className="nav-right">
-        <Link to="/signin"><button className="boton-elegante">Sign in</button></Link>
-        <Link to="/signup"><button className="boton-elegante">Register</button></Link>
-        <Link to="/addproducts"><button className="boton-elegante">Add products</button></Link>
-      </div>
+<div className="nav-right">
+  <Link to="/signin" className="nav-link">Sign in</Link>
+  <Link to="/signup" className="nav-link">Register</Link>
+  <Link to="/addproducts" className="nav-link">Add products</Link>
+</div>
+
     </nav>
         
       </header>

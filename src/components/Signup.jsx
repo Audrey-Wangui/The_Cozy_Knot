@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import signup from '../css/Form.css';
+import Footer from './Footer';
 
 const Signup = () => {
   // Initialize the hooks
@@ -124,6 +125,7 @@ const Signup = () => {
             Already have an account? <Link  className="link" to={'/signin'}> Sign in</Link>
           </form>
         </div>
+        <Footer />
     </div>
   )
 }

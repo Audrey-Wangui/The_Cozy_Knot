@@ -1,110 +1,88 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Form = () => {
+const Button = () => {
   return (
     <StyledWrapper>
-      <div className="container">
-        <div className="form_area">
-          <p className="title">SIGN UP</p>
-          <form action>
-            <div className="form_group">
-              <label className="sub_title" htmlFor="name">Name</label>
-              <input placeholder="Enter your full name" className="form_style" type="text" />
-            </div>
-            <div className="form_group">
-              <label className="sub_title" htmlFor="email">Email</label>
-              <input placeholder="Enter your email" id="email" className="form_style" type="email" />
-            </div>
-            <div className="form_group">
-              <label className="sub_title" htmlFor="password">Password</label>
-              <input placeholder="Enter your password" id="password" className="form_style" type="password" />
-            </div>
-            <div>
-              <button className="btn">SIGN UP</button>
-              <p>Have an Account? <a className="link" href>Login Here!</a></p><a className="link" href>
-              </a></div><a className="link" href>
-            </a></form></div><a className="link" href>
-        </a></div>
+      <button className="Btn">
+        <div className="sign">
+          <svg viewBox="0 0 512 512">
+            <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z" />
+          </svg>
+        </div>
+        <div className="text">Logout</div>
+      </button>
     </StyledWrapper>
   );
 }
 
 const StyledWrapper = styled.div`
-  .container {
+  .Btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: 0.4s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(to right, #3498db, #e74c3c);
+  }
+
+  .sign {
+    width: 100%;
+    transition-duration: 0.4s;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
-    text-align: center;
   }
 
-  .form_area {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #EDDCD9;
-    height: auto;
-    width: auto;
-    border: 2px solid #264143;
-    border-radius: 20px;
-    box-shadow: 3px 4px 0px 1px #E99F4C;
+  .sign svg {
+    width: 17px;
   }
 
-  .title {
-    color: #264143;
-    font-weight: 900;
-    font-size: 1.5em;
-    margin-top: 20px;
+  .sign svg path {
+    fill: white;
   }
 
-  .sub_title {
+  .text {
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: #ecf0f1;
+    font-size: 1.2em;
     font-weight: 600;
-    margin: 5px 0;
+    transition-duration: 0.4s;
   }
 
-  .form_group {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    margin: 10px;
+  .Btn:hover {
+    width: 150px;
+    border-radius: 20px;
+    transition-duration: 0.4s;
+    background: linear-gradient(to right, #3498db, #e74c3c);
   }
 
-  .form_style {
-    outline: none;
-    border: 2px solid #264143;
-    box-shadow: 3px 4px 0px 1px #E99F4C;
-    width: 290px;
-    padding: 12px 10px;
-    border-radius: 4px;
-    font-size: 15px;
+  .Btn:hover .sign {
+    width: 30%;
+    transition-duration: 0.4s;
+    padding-left: 12px;
   }
 
-  .form_style:focus, .btn:focus {
-    transform: translateY(4px);
-    box-shadow: 1px 2px 0px 0px #E99F4C;
+  .Btn:hover .text {
+    opacity: 1;
+    width: 70%;
+    transition-duration: 0.4s;
+    padding-right: 10px;
   }
 
-  .btn {
-    padding: 15px;
-    margin: 25px 0px;
-    width: 290px;
-    font-size: 15px;
-    background: #DE5499;
-    border-radius: 10px;
-    font-weight: 800;
-    box-shadow: 3px 3px 0px 0px #E99F4C;
-  }
-
-  .btn:hover {
-    opacity: .9;
-  }
-
-  .link {
-    font-weight: 800;
-    color: #264143;
-    padding: 5px;
+  .Btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0 0 0 rgba(0, 0, 0, 0.2);
   }`;
 
-export default Form;
+export default Button;

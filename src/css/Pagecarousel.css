@@ -1,0 +1,260 @@
+/* Pagecarousel.css */
+
+/* Container styling */
+.carousel-container {
+  margin-bottom: 2rem;
+  position: relative;
+  margin-top: -1rem; /* Removes top gap */
+}
+
+/* Main carousel styling */
+.carousel {
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-top: -0.5rem; /* Additional adjustment to remove gap */
+}
+
+/* Image styling - zoomed out with object-fit contain */
+.carousel-item img {
+  height: 500px;
+  width: 150%; /* Increased from 100% to make image wider */
+  object-fit: contain;
+  background-color: #F0F4F7;
+  transition: transform 0.3s ease;
+  margin-left: -5%; /* Negative margin to center the wider image */
+  
+}
+
+/* Alternative: If you want to keep cover but zoom out more, use scale */
+/* Uncomment this section if you prefer cover with zoom out effect */
+/* 
+.carousel-item img {
+  height: 500px;
+  object-fit: cover;
+  object-position: center;
+  width: 110%;
+  transform: scale(0.95);
+  transition: transform 0.3s ease;
+  margin-left: -5%;
+}
+
+.carousel-item:hover img {
+  transform: scale(0.98);
+}
+ */
+
+/* Responsive image heights for different screen sizes */
+@media (max-width: 1200px) {
+  .carousel-item img {
+    height: 450px;
+    width: 108%; /* Slightly reduced for smaller screens */
+    margin-left: -4%;
+  }
+}
+
+@media (max-width: 992px) {
+  .carousel-item img {
+    height: 400px;
+    width: 106%;
+    margin-left: -3%;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel-item img {
+    height: 350px;
+    width: 104%;
+    margin-left: -2%;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-item img {
+    height: 300px;
+    width: 102%;
+    margin-left: -1%;
+  }
+}
+
+/* Caption styling - polished professional look */
+.carousel-caption {
+  background: linear-gradient(135deg, #667436 0%, #eaed87 100%);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 2rem 3rem;
+  bottom: 15%;
+  left: 10%;
+  right: 10%;
+  max-width: 80%;
+  margin: 0 auto;
+  text-align: center;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.carousel-item:hover .carousel-caption {
+  transform: translateY(-5px);
+}
+
+/* Heading styling */
+.carousel-caption h3 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #fff 0%, #f0f0f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
+
+/* Paragraph styling */
+.carousel-caption p {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  color: #f8f9fa;
+  font-family: 'Montserrat', 'Segoe UI', sans-serif;
+  line-height: 1.6;
+}
+
+/* Carousel control buttons styling */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 8%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.carousel:hover .carousel-control-prev,
+.carousel:hover .carousel-control-next {
+  opacity: 1;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #d9828d;
+  border-radius: 50%;
+  padding: 20px;
+  background-size: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: #621e3e;
+}
+
+/* Carousel indicators styling */
+.carousel-indicators {
+  bottom: 20px;
+  margin-bottom: 0;
+}
+
+.carousel-indicators button {
+  width: 40px;
+  height: 4px;
+  margin: 0 6px;
+  border-radius: 2px;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.3s ease;
+}
+
+.carousel-indicators button.active {
+  background-color: #fff;
+  width: 50px;
+  transform: scaleX(1.1);
+}
+
+.carousel-indicators button:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Animation for captions */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.carousel-item.active .carousel-caption {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Responsive typography */
+@media (max-width: 768px) {
+  .carousel-caption {
+    padding: 1rem 1.5rem;
+    bottom: 10%;
+  }
+  
+  .carousel-caption h3 {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+  }
+  
+  .carousel-caption p {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    padding: 15px;
+    background-size: 40%;
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-caption {
+    padding: 0.75rem 1rem;
+    bottom: 8%;
+  }
+  
+  .carousel-caption h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.4rem;
+  }
+  
+  .carousel-caption p {
+    font-size: 0.8rem;
+  }
+}
+
+/* Optional: Add a subtle background pattern for contain mode */
+.carousel-item {
+  background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+}
+
+/* Remove the overlay gradient if using contain mode */
+.carousel-item::before {
+  display: none;
+}
+
+/* Ensure captions appear above the image */
+.carousel-caption {
+  z-index: 2;
+}
+
+/* Smooth scrolling for the entire carousel */
+.carousel-item {
+  transition: transform 0.6s ease-in-out;
+}
+
+/* If you want padding around images for more breathing room */
+.carousel-item img {
+  padding: 20px;
+  box-sizing: border-box;
+}

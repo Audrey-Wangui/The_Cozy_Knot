@@ -5,6 +5,13 @@ import { useNavigate } from 'react-router-dom';
 import card from "../css/Getproducts.css";
 import Patternsection from "./Patternsection.jsx"
 import Advertbanner from './Advertbanner.jsx'
+import PageCarousel from './PageCarousel.jsx'; 
+import Footer from './Footer.jsx';
+
+
+
+
+
 
 
 
@@ -56,16 +63,18 @@ const Getproducts = () => {
 
   return (
     <div>
-      <h3>Crochet hook</h3>
         {loading && <Loader />}
         <h4 className="text-danger"> {error} </h4>
 
-         <Patternsection />
-         <Advertbanner /> 
+         <PageCarousel />
+         
 
         {/* Card One */}
-        <div className="card">
+        <div className="card-container">
         {products.map((product) => (
+        <div>
+        <div key={product.id} className="card">
+        
                 
               <div className='justify-content-center'>
               <div className="card-img"><div className="img" />
@@ -88,14 +97,20 @@ const Getproducts = () => {
             </div>
             </div>
             </div>
-        ))}   
-    </div>
-
         
+    </div>       
     </div>
+        ))}
+    
+    <Patternsection />
+
+    <Advertbanner /> 
+    <Footer  />   
+    </div>
+    </div>
+    
     
   )
 }
 
 export default Getproducts;
-console.log("Render");
