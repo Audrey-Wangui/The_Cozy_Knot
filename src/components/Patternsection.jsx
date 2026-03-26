@@ -1,7 +1,7 @@
 import React from 'react'
 import "../css/Patternsection.css"; 
 import mainPattern from '../images/background.jpg'; 
-import overlayPattern from '../images/cherryblossomstitch.png';
+import overlayPattern from '../images/cardigan.jpg';
 
 const Patternsection = () => {
   return (

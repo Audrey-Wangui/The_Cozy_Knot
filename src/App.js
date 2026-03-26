@@ -17,7 +17,9 @@ function App() {
       <header>
         <nav className="custom-nav">
         <div className="nav-left">
-        <Link to="/"><div className="nav-logo">The Cozy Knot</div></Link>
+        <Link to="/" className="nav-logo">
+          The Cozy Knot
+        </Link>
       </div>
 
 <div className="nav-right">

@@ -41,6 +41,7 @@
   color: #f8eebd;
   font-family: sans-serif;
   
+  
 }
 a {
   text-decoration: none;
@@ -104,4 +105,25 @@ a {
 /* Optional: Slight weight change when active */
 .nav-link.active {
   font-weight: 600;
+}
+
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+  color: #ffec8e;  /* warm muted orange like mango */
+  letter-spacing: 0.1em;  /* add some spacing between letters */
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.2s ease;
+}
+
+.nav-logo:hover {
+  color: #c6c954;  /* lighter orange on hover */
+  transform: scale(1.05);
+}
+.nav-logo::first-letter {
+  font-weight: 600;
+  font-size: 3rem;
+  letter-spacing: 0.15em;
 }

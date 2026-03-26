@@ -3,7 +3,7 @@ import '../css/Advert.css';
 
 import img1 from '../images/debbby bliss wool yarn.jpg';
 import img2 from '../images/plastic darning needles.jpg';
-import img3 from '../images/lotus stitch.png';
+import img3 from '../images/comforters.jpg';
 import img4 from '../images/bamboo blend cotton yarn.jpg';
 import img5 from '../images/cat stichmarker.jpg';
 import img6 from '../images/bamboo blend cotton yarn.jpg';
