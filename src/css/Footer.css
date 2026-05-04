@@ -27,7 +27,7 @@
   line-height: 1.6;
 }
 
-/* Social Icons */
+
 .social-icons {
   margin-top: 10px;
   display: flex;
@@ -40,7 +40,7 @@
   color: #621e3e;
 }
 
-/* Form */
+
 .footer-form {
   display: flex;
   flex-direction: column;
@@ -74,7 +74,7 @@
   background: #621e3e;
 }
 
-/* Bottom */
+
 .footer-bottom {
   text-align: center;
   margin-top: 20px;
@@ -83,7 +83,7 @@
   font-size: 13px;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;

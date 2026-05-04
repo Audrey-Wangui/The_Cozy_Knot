@@ -8,13 +8,6 @@ import Advertbanner from './Advertbanner.jsx'
 import PageCarousel from './PageCarousel.jsx'; 
 import Footer from './Footer.jsx';
 
-
-
-
-
-
-
-
 const Getproducts = () => {
 
   // Initialize hook to ghelp you manage the state of your application

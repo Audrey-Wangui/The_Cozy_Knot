@@ -1,6 +1,4 @@
-/* Productpay.css - Complete CSS Code */
 
-/* Container to center the pay on screen */
 .pay-container {
   display: flex;
   justify-content: center;
@@ -9,12 +7,12 @@
   background: #fff;
   padding: 20px;
   box-sizing: border-box;
-  margin: 0; /* Remove any default margins */
-  width: 100%; /* Full width */
-  position: relative; /* Ensure proper positioning */
+  margin: 0; 
+  width: 100%; 
+  position: relative; 
 }
 
-/* Main pay Styles */
+
 .pay {
   --font-color: #323232;
   --font-color-sub: #323232;
@@ -34,7 +32,7 @@
   gap: 12px;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   transition: all 0.3s ease;
-  margin: 0 auto; /* Center horizontally */
+  margin: 0 auto; 
 }
 
 .pay:hover {
@@ -42,7 +40,7 @@
   box-shadow: 6px 6px var(--main-color);
 }
 
-/* Image Container */
+
 .pay-img {
   width: 100%;
   height: 120px;
@@ -69,7 +67,7 @@
   transform: scale(1.05);
 }
 
-/* Product Title */
+
 .pay-title {
   font-size: 18px;
   font-weight: 600;
@@ -81,7 +79,7 @@
   line-height: 1.3;
 }
 
-/* Product Description */
+
 .pay-subtitle {
   font-size: 13px;
   line-height: 1.4;
@@ -92,7 +90,7 @@
   margin: 0;
 }
 
-/* Divider */
+
 .pay-divider {
   width: 100%;
   border: 1px solid var(--main-color);
@@ -100,7 +98,7 @@
   margin: 5px 0;
 }
 
-/* pay Footer - Contains price, input, and button */
+
 .pay-footer {
   display: flex;
   flex-direction: column;
@@ -108,7 +106,7 @@
   margin-top: auto;
 }
 
-/* Price Section */
+
 .price-section {
   display: flex;
   justify-content: space-between;
@@ -129,7 +127,7 @@
   margin-right: 4px;
 }
 
-/* Phone Number Input Styling */
+
 .phone-input {
   width: 100%;
   padding: 10px 12px;
@@ -141,7 +139,7 @@
   box-sizing: border-box;
   background: var(--bg-color);
   color: var(--font-color);
-  text-align: left; /* Keep text left-aligned for input */
+  text-align: left; 
 }
 
 .phone-input:focus {
@@ -159,7 +157,7 @@
   border-color: var(--main-focus);
 }
 
-/* Payment Button Styling */
+
 .payment-btn {
   width: 100%;
   height: 42px;
@@ -178,7 +176,7 @@
   font-family: inherit;
   position: relative;
   overflow: hidden;
-  margin: 0; /* Ensure no margin issues */
+  margin: 0; 
 }
 
 .payment-btn svg {
@@ -204,7 +202,7 @@
   transform: translateY(1px);
 }
 
-/* Optional: Add ripple effect on button click */
+
 .payment-btn::after {
   content: '';
   position: absolute;
@@ -223,7 +221,7 @@
   height: 100px;
 }
 
-/* Loading state for button (optional) */
+
 .payment-btn.loading {
   opacity: 0.7;
   cursor: not-allowed;
@@ -233,7 +231,7 @@
   transform: none;
 }
 
-/* Disabled state for button */
+
 .payment-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -245,11 +243,10 @@
   border-color: var(--main-color);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .pay-container {
     padding: 15px;
-    min-height: 100vh; /* Keep full viewport height on mobile */
+    min-height: 100vh; 
   }
   
   .pay {
@@ -257,7 +254,7 @@
     max-width: 320px;
     padding: 18px;
     min-height: 480px;
-    margin: 0 auto; /* Ensure centering on mobile */
+    margin: 0 auto; 
   }
   
   .pay-title {
@@ -290,7 +287,7 @@
 @media (max-width: 480px) {
   .pay-container {
     padding: 10px;
-    min-height: 100vh; /* Keep full viewport height on mobile */
+    min-height: 100vh; 
   }
   
   .pay {
@@ -298,7 +295,7 @@
     width: 100%;
     padding: 16px;
     min-height: 460px;
-    margin: 0 auto; /* Ensure centering on mobile */
+    margin: 0 auto; 
   }
   
   .pay-img {
@@ -341,7 +338,7 @@
   }
 }
 
-/* Dark Mode Support (Optional) */
+
 @media (prefers-color-scheme: dark) {
   .pay-container {
     background: #1a1a1a;
@@ -370,7 +367,6 @@
   }
 }
 
-/* Animation for pay appearance (Optional) */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -386,17 +382,17 @@
   animation: fadeInUp 0.5s ease-out;
 }
 
-/* Smooth scrolling for the page */
+
 html {
   scroll-behavior: smooth;
 }
 
-/* Box sizing fix for all elements */
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
-/* Additional centering for body to ensure full coverage */
+
 body {
   margin: 0;
   padding: 0;

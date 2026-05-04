@@ -132,6 +132,3 @@ const Signup = () => {
 
 export default Signup;
 
-// Research on Axios in reactjs
-// They are responsible for transfering messages between the Reactapp and your API
-// The server can only understand HTTP protocals so the axios translates this
