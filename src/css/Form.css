@@ -69,6 +69,8 @@
 
 .btn:hover {
   opacity: .9;
+  background-color: #621e3e;
+  color: aliceblue;
 }
 
 .link {

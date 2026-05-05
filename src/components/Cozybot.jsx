@@ -55,7 +55,7 @@ const Cozybot = ({onClose}) => {
   };
 
   return (
-    <div className="card">
+    <div className="cardbot">
       <div className="chat-header">
         <h3>CozyBot</h3>
         <p>Your Crochet Assistant</p>
