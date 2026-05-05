@@ -1,0 +1,325 @@
+/* 1. FLOATING BUTTON STYLES */
+.chatBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  z-index: 9999;
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffec8e;
+  background-image: linear-gradient(147deg, #667436, #ffec8e, #c6c954);
+  cursor: pointer;
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  background-size: 300%;
+  background-position: left;
+  transition: all 0.5s ease;
+}
+
+.chatBtn:hover {
+  background-position: right;
+  transform: scale(1.1);
+}
+
+.tooltip {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  background-color: #667436;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 5px;
+  transition: 0.3s;
+  pointer-events: none;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.chatBtn:hover .tooltip {
+  opacity: 1;
+}
+
+/* 2. CHAT WINDOW (THE CARD) - MOVED DOWN TO BE FULLY VISIBLE */
+.chat-window-overlay {
+  position: fixed;
+  bottom: 15px;
+  right: 25px;
+  z-index: 10000;
+  animation: slideUp 0.3s ease-out;
+}
+
+/* FIXED: Card has proper height and won't overflow */
+.card {
+  width: 350px;
+  max-width: calc(100vw - 40px);
+  height: 500px;
+  max-height: 70vh;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid #eee;
+}
+
+/* FIXED: Header stays at top - NOW WITH PROPER LAYOUT */
+.chat-header {
+  background-color: #621e3e !important;
+  color: #f9eaa0 !important;
+  padding: 12px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+  gap: 10px; /* ← ADDED: space between text and button */
+  padding-top: max(12px, env(safe-area-inset-top));
+}
+
+/* FIXED: Text container - takes available space */
+.header-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+  flex: 1; /* ← ADDED: takes remaining space */
+}
+
+.header-info h3 {
+  margin: 0;
+  font-size: 16px;
+  white-space: nowrap; /* ← ADDED: prevents text wrapping */
+}
+
+.header-info p {
+  margin: 4px 0 0;
+  font-size: 11px;
+  opacity: 0.9;
+  white-space: nowrap; /* ← ADDED: prevents text wrapping */
+}
+
+/* FIXED: Better close button - WON'T DISTORT TEXT */
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  flex-shrink: 0; /* ← ADDED: prevents button from shrinking */
+}
+
+.close-btn:hover {
+  opacity: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* 3. MESSAGE BUBBLES - FIXED SCROLLING */
+.chat-window {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+  background-color: #fdfdfd;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar for better UX */
+.chat-window::-webkit-scrollbar {
+  width: 6px;
+}
+
+.chat-window::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.chat-window::-webkit-scrollbar-thumb {
+  background: #444;
+  border-radius: 10px;
+}
+
+.message-bubble {
+  max-width: 85%;
+  margin-bottom: 4px;
+  padding: 10px 14px;
+  border-radius: 15px;
+  font-size: 14px;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.bot {
+  align-self: flex-start;
+  background-color: #f0f0f0;
+  color: #333;
+  border-bottom-left-radius: 2px;
+}
+
+.user {
+  align-self: flex-end;
+  background-color: #f0e4a7;
+  color: #444;
+  border-bottom-right-radius: 2px;
+}
+
+/* 4. INPUT AREA - FIXED AT BOTTOM */
+.chat-input {
+  display: flex;
+  padding: 12px;
+  border-top: 1px solid #eee;
+  background-color: #fff;
+  flex-shrink: 0;
+  gap: 8px;
+  padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+
+.message-input {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  padding: 10px 15px;
+  outline: none;
+  font-size: 14px;
+  transition: border-color 0.2s;
+}
+
+.message-input:focus {
+  border-color: #d9828d;
+  box-shadow: 0 0 0 2px rgba(217, 130, 141, 0.2);
+}
+
+.send-button {
+  background-color: #667436;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.send-button:hover {
+  background-color: #ecd97c;
+  transform: scale(1.02);
+}
+
+/* Animation */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* === RESPONSIVE FIXES FOR MOBILE === */
+@media (max-width: 480px) {
+  .chat-window-overlay {
+    right: 10px;
+    bottom: 15px;
+  }
+  
+  .card {
+    width: calc(100vw - 20px);
+    height: 60vh;
+    max-height: 500px;
+  }
+  
+  .chat-header {
+    padding: 10px 12px;
+    gap: 8px;
+  }
+  
+  .header-info h3 {
+    font-size: 13px;
+    white-space: normal; /* Allows wrapping on mobile if needed */
+  }
+  
+  .header-info p {
+    font-size: 9px;
+    white-space: normal;
+  }
+  
+  .close-btn {
+    width: 25px;
+    height: 25px;
+    font-size: 18px;
+  }
+  
+  .message-bubble {
+    max-width: 90%;
+    font-size: 13px;
+  }
+  
+  .chat-input {
+    padding: 10px;
+  }
+  
+  .message-input {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+  
+  .send-button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
+
+/* === DARK MODE SUPPORT === */
+@media (prefers-color-scheme: dark) {
+  .card {
+    background-color: #1a1a1a;
+    border-color: #333;
+  }
+  
+  .chat-window {
+    background-color: #2a2a2a;
+  }
+  
+  .bot {
+    background-color: #3a3a3a;
+    color: #eee;
+  }
+  
+  .user {
+    background-color: #4a4a3a;
+    color: #eee;
+  }
+  
+  .chat-input {
+    background-color: #1a1a1a;
+    border-top-color: #333;
+  }
+  
+  .message-input {
+    background-color: #2a2a2a;
+    border-color: #444;
+    color: #eee;
+  }
+  
+  .message-input:focus {
+    border-color: #d9828d;
+  }
+}

@@ -7,6 +7,7 @@ import Patternsection from "./Patternsection.jsx"
 import Advertbanner from './Advertbanner.jsx'
 import PageCarousel from './PageCarousel.jsx'; 
 import Footer from './Footer.jsx';
+import Chatcontainer from './Chatcontainer.jsx'
 
 const Getproducts = () => {
 
@@ -99,8 +100,11 @@ const Getproducts = () => {
 
     <Advertbanner /> 
     <Footer  />   
+    <Chatcontainer />
     </div>
     </div>
+
+    
     
     
   )
