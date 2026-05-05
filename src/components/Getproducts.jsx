@@ -58,7 +58,7 @@ const Getproducts = () => {
   return (
     <div>
         {loading && <Loader />}
-        <h4 className="text-danger"> {error} </h4>
+        <h4 className="text-light"> {error} </h4>
 
          <PageCarousel />
          

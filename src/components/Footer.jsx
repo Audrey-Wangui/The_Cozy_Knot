@@ -24,9 +24,9 @@ const Footer = () => {
           <p>Phone: +254 726203909</p>
 
           <div className="social-icons">
-            <FaFacebook />
-            <FaTwitter />
-            <FaInstagram />
+            <a href="https://www.facebook.com/"><FaFacebook /></a>
+            <a href="https://x.com/?lang=en"><FaTwitter /></a>
+            <a href="https://www.instagram.com/instagram"><FaInstagram /></a>
           </div>
         </div>
 

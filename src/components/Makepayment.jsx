@@ -74,8 +74,8 @@ const Makepayment = () => {
 
         {loading && <Loader />}
 
-        <h3 className='text-success'> {success} </h3>
-        <h4 className='text-danger'> {error} </h4>
+        <h3 className='text-secondary' style={{ textAlign: "center" }}> {success} </h3>
+        <h4 className='text-secondary' style={{ textAlign: "center" }}> {error} </h4>
 
         <button onClick={() => navigate("/")} className="Btn">
         <div className="sign">
@@ -89,7 +89,7 @@ const Makepayment = () => {
            
         <div className="pay_container">  
         <div className="pay">
-          <p className='text-light'>Lipa na Mpesa</p>     
+ 
               <div>
               <div className="pay-img"><div className="img" />
               <img 
@@ -107,7 +107,7 @@ const Makepayment = () => {
               
               <input type="number"
                 className='form-control'
-                placeholder='Phone Number (245xxxxxxxxxxx)'
+                placeholder='Phone Number (254xxxxxxxxxxx)'
                 required 
                 value={number}
                 onChange={(e) => setNumber(e.target.value)}/> <br /><br />

@@ -74,8 +74,8 @@ const Addproducts = () => {
         {/* Bind the loading hook */}
         {loading && <Loader />}
 
-          <h3 className='text-success'> {success} </h3>
-          <h4 className='text-danger'> {error} </h4>
+          <h3 className='text-light'> {success} </h3>
+          <h4 className='text-light'> {error} </h4>
 
         <form action onSubmit={handleSubmit}>
           <div className="form_group">

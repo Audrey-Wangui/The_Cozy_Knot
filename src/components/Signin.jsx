@@ -61,7 +61,7 @@ const Signin = () => {
 
       setTimeout(() => {
         setSuccess("");
-      }, 5000);
+      }, 10000);
       
     }   
     catch(error){
@@ -77,9 +77,9 @@ const Signin = () => {
     <div className="container">
       <div className="form_area">
         <h1 className="title">SIGN IN</h1>
-        <h5 className="text-info">{loading}</h5>
-        <h3 className="text-success">{success}</h3>
-        <h4 className="text-danger">{error}</h4>
+        <h5 className="text-light">{loading}</h5>
+        <h3 className="text-light">{success}</h3>
+        <h4 className="text-light">{error}</h4>
 
         <form action onSubmit={handlesubmit}>
          <div className="form_group">
