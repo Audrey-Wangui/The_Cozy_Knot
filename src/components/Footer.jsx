@@ -30,20 +30,7 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* Form Column */}
-        <div className="footer-col">
-          <h3>Subscribe</h3>
-          <form className="footer-form">
-            <input 
-              type="email" 
-              placeholder="Enter your email" 
-            />
-            <textarea 
-              placeholder="Your message"
-            ></textarea>
-            <button type="submit">Send</button>
-          </form>
-        </div>
+        
 
       </div>
 

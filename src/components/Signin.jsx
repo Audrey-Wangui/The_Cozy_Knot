@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom';
 import signuo from '../css/Form.css'
 import Footer from './Footer';
+import { useAuth } from '../context/AuthContext';
 
 const Signin = () => {
 
@@ -15,6 +16,9 @@ const Signin = () => {
   const [loading, setLoading] = useState("");
   const [success, setSuccess] = useState("");
   const [error, setError] = useState("");
+
+   //Get the login function from your AuthContext
+  const { login } = useAuth();
 
   // Below we have the useNavigate hook to redirect us to another page on successful login/signin
   const navigate = useNavigate("")
@@ -49,6 +53,9 @@ const Signin = () => {
       if(response.data.user){
       // Store details in local storage.
       localStorage.setItem("user", JSON.stringify(response.data.user)); 
+
+      login(response.data.user);
+
       // If user is there, definately the details entered during sign in are correct
       // setSuccess("Login Successful")
       // If its successful let a person be redirected to another page
@@ -105,7 +112,7 @@ const Signin = () => {
 
           {/* {password} */}
 
-          <button className="btn">SIGN UP</button>
+          <button className="btn">SIGN IN</button>
            <br /><br />
 
         Don't have an account? <Link className="link" to={'/signup'}> Register </Link>

@@ -8,9 +8,11 @@ import Addproducts from './components/Addproducts';
 import Getproducts from './components/Getproducts';
 import Makepayment from './components/Makepayment';
 import Notfound from './components/Notfound';
+import { useAuth } from './context/AuthContext';
 
 
 function App() {
+  const { user, logout } = useAuth(); 
   return (
     <Router>
       <div className="App">
@@ -22,12 +24,23 @@ function App() {
         </Link>
       </div>
 
-<div className="nav-right">
-  <Link to="/signin" className="nav-link">Sign in</Link>
-  <Link to="/signup" className="nav-link">Register</Link>
-  <Link to="/addproducts" className="nav-link">Add products</Link>
-</div>
-
+      <div className="nav-right">
+          {user ? (
+           
+            <>
+              <span className="user-greeting nav-link">Hi {user.username}!</span>
+              <button onClick={logout} className="nav-link">Sign out</button>
+              <Link to="/addproducts" className="nav-link">Add products</Link>
+            </>
+          ) : (
+            
+            <>
+              <Link to="/signin" className="nav-link">Sign in</Link>
+              <Link to="/signup" className="nav-link">Register</Link>
+              <Link to="/addproducts" className="nav-link">Add products</Link>
+            </>
+          )}
+        </div>
     </nav>
         
       </header>
@@ -50,4 +63,3 @@ function App() {
 }
 
 export default App;
-// Changes
