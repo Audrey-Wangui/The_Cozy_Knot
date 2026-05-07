@@ -1,4 +1,7 @@
+// Below is the import of the hooks
 import React, { useState, useRef, useEffect } from 'react';
+
+// Import the csv for the chatbot but in js form
 import { data } from "./cozy_data.js";
 
 
@@ -18,6 +21,8 @@ const Cozybot = ({onClose}) => {
   }, [messages]);
 
   const getBotResponse = (text) => {
+    // Takes user's message, looks for keywords in your data
+  // Returns matching response or "I don't know"
     const userText = text.toLowerCase();
     for (let row of data) {
       if (!row.Keywords) continue;
@@ -34,6 +39,10 @@ const Cozybot = ({onClose}) => {
   };
 
   const sendMessage = () => {
+    // 1. Add user's message to chat
+    // 2. Clear input box
+    // 3. Wait 0.5 seconds
+    // 4. Get bot's response and add to chat
     if (!input.trim()) return;
 
     const userMessage = { sender: "user", text: input.trim() };

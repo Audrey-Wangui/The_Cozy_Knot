@@ -9,6 +9,7 @@ const ChatContainer = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleChat = () => {
+  // Flips the value: false→true or true→false
     setIsOpen(!isOpen);
   };
 
