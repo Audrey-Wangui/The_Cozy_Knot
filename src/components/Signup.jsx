@@ -75,7 +75,7 @@ const Signup = () => {
 
           <form action onSubmit={handleSubmit}>
             <div className="form_group">
-            <label className="sub_title" htmlFor="name">Name</label>
+            <label className="sub_title" htmlFor="name">Username</label>
             <input type="text"
             placeholder='Enter the username'
             className="form_style" 

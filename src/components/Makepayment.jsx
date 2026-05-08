@@ -66,9 +66,6 @@ const Makepayment = () => {
     
   return (
     <div>
-        {/* <button className="btn btn-outline-primary">Back to Product</button> */}
-     
-        
 
         <form onSubmit={handlesubmit}>
 
